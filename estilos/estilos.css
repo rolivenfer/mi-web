@@ -1,0 +1,26 @@
+h1 { color: darkslategray; 
+	text-shadow: 2px 2px 5px lavender;
+	font-size: 54px; }
+h3 { color: darkslategray; }
+p { color: darkslategray; }
+ul {
+	list-style-type: none;
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: large;
+}
+a.menu {
+	display: block;
+	width: 230px;
+	height: 40px;
+	text-decoration: none;
+	margin: 25px 0 25px 0;
+	align-content: center;
+}
+a.menu:link, a.menu:visited {
+	color: #ADD8E6;
+	background-color: darkslategray;
+} 
+a.menu:hover, a.menu:active {
+	color: darkslategray;
+	background-color: lavender;
+}
