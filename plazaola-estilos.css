@@ -1,0 +1,590 @@
+/* plazaola-styles.css */
+/* Estilos basados en el PDF de Plazaola */
+
+/* Variables de colores basadas en el PDF */
+:root {
+    --primary-color: #8b0000; /* Rojo oscuro similar al PDF */
+    --secondary-color: #d4af37; /* Dorado para acentos */
+    --dark-color: #1a1a1a; /* Casi negro para textos */
+    --light-color: #f8f5f0; /* Beige claro para fondos */
+    --text-color: #333333; /* Gris oscuro para textos */
+    --border-color: #d9c7a7; /* Beige para bordes */
+    --white: #ffffff;
+    --shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Reset y estilos generales */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    color: var(--text-color);
+    background-color: var(--white);
+    line-height: 1.6;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Tipografía */
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', serif;
+    font-weight: 700;
+}
+
+/* Header */
+.header {
+    background-color: var(--white);
+    box-shadow: var(--shadow);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    padding: 15px 0;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.tagline {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 0.9rem;
+    letter-spacing: 1.5px;
+    text-align: center;
+    color: var(--dark-color);
+}
+
+.main-nav ul {
+    display: flex;
+    list-style: none;
+}
+
+.main-nav li {
+    margin-left: 30px;
+}
+
+.main-nav a {
+    text-decoration: none;
+    color: var(--dark-color);
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: var(--transition);
+    position: relative;
+}
+
+.main-nav a:hover,
+.main-nav a.active {
+    color: var(--primary-color);
+}
+
+.main-nav a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.main-nav a:hover::after,
+.main-nav a.active::after {
+    width: 100%;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--primary-color);
+}
+
+/* Main content */
+.main-content {
+    margin-top: 120px;
+    padding-bottom: 60px;
+}
+
+.menu-section {
+    margin-bottom: 80px;
+    padding: 0 20px;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    font-size: 2.8rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.special-title {
+    letter-spacing: 5px;
+    font-weight: 400;
+}
+
+.section-subtitle {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.2rem;
+    color: var(--secondary-color);
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-top: -10px;
+}
+
+.section-divider {
+    height: 3px;
+    width: 100px;
+    background-color: var(--secondary-color);
+    margin: 0 auto;
+}
+
+/* Menu items */
+.menu-items {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.menu-item {
+    margin-bottom: 35px;
+    padding-bottom: 20px;
+    border-bottom: 1px dashed var(--border-color);
+}
+
+.menu-item.featured {
+    background-color: var(--light-color);
+    padding: 20px;
+    border-radius: 5px;
+    border-bottom: none;
+}
+
+.item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.item-name {
+    font-size: 1.4rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.item-price {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+}
+
+.item-description {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1rem;
+    color: var(--text-color);
+    font-style: italic;
+    max-width: 85%;
+}
+
+/* Subsecciones */
+.subsection {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.subsection-title {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-left: 4px solid var(--secondary-color);
+    padding-left: 15px;
+}
+
+.subsection-note {
+    font-family: 'Raleway', sans-serif;
+    font-style: italic;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+.subsection-items {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.subsection-item {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.05rem;
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1px dotted var(--border-color);
+}
+
+.item-price-small {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-left: 15px;
+    white-space: nowrap;
+}
+
+.item-note {
+    font-size: 0.9rem;
+    font-style: italic;
+    color: var(--text-color);
+    display: block;
+    margin-top: 5px;
+    font-weight: 300;
+}
+
+/* Sección de vinos */
+.wine-section {
+    background-color: var(--light-color);
+    padding: 40px 20px;
+    border-radius: 10px;
+}
+
+.wine-category {
+    margin-bottom: 40px;
+}
+
+.wine-category-title {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.wine-item {
+    margin-bottom: 25px;
+    padding-bottom: 20px;
+    border-bottom: 1px dotted var(--border-color);
+}
+
+.wine-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    margin-bottom: 8px;
+}
+
+.wine-name {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    max-width: 70%;
+}
+
+.wine-price {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+    white-space: nowrap;
+}
+
+.wine-description {
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.95rem;
+    color: var(--text-color);
+    font-style: italic;
+}
+
+/* Sección especial */
+.special-section {
+    background-color: #f9f5ed;
+    padding: 40px;
+    border-radius: 10px;
+    border: 2px dashed var(--border-color);
+}
+
+.special-items {
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.special-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+    border-bottom: 1px dotted var(--border-color);
+}
+
+.special-item-name {
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.special-item-price {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    white-space: nowrap;
+}
+
+/* Footer */
+.footer {
+    background-color: var(--dark-color);
+    color: var(--white);
+    padding: 60px 0 30px;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.footer-logo h2 {
+    font-size: 2.5rem;
+    letter-spacing: 3px;
+    color: var(--white);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.footer-logo p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: 1.5px;
+    text-align: center;
+    color: var(--secondary-color);
+    margin-bottom: 30px;
+}
+
+.footer-info {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+    flex-wrap: wrap;
+}
+
+.contact-info, .social-links {
+    flex: 1;
+    min-width: 250px;
+    margin-bottom: 30px;
+}
+
+.contact-info h3, .social-links h3 {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+    color: var(--secondary-color);
+}
+
+.contact-info p {
+    margin-bottom: 10px;
+    font-family: 'Raleway', sans-serif;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info i {
+    margin-right: 10px;
+    color: var(--secondary-color);
+    width: 20px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 20px;
+}
+
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    color: var(--white);
+    font-size: 1.2rem;
+    transition: var(--transition);
+}
+
+.social-icons a:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
+
+.copyright {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-family: 'Raleway', sans-serif;
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .section-title {
+        font-size: 2.4rem;
+    }
+    
+    .footer-info {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-info, .social-links {
+        text-align: center;
+    }
+    
+    .contact-info p {
+        justify-content: center;
+    }
+    
+    .social-icons {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .main-nav {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        background-color: var(--white);
+        box-shadow: var(--shadow);
+        display: none;
+        z-index: 999;
+    }
+    
+    .main-nav.active {
+        display: block;
+    }
+    
+    .main-nav ul {
+        flex-direction: column;
+        padding: 20px 0;
+    }
+    
+    .main-nav li {
+        margin: 0;
+        text-align: center;
+    }
+    
+    .main-nav a {
+        display: block;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .main-nav a::after {
+        display: none;
+    }
+    
+    .main-content {
+        margin-top: 100px;
+    }
+    
+    .section-title {
+        font-size: 2rem;
+    }
+    
+    .item-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .item-price {
+        margin-top: 5px;
+    }
+    
+    .wine-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .wine-price {
+        margin-top: 5px;
+    }
+    
+    .special-item {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .special-item-price {
+        margin-top: 5px;
+    }
+}
+
+@media (max-width: 576px) {
+    .logo h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title {
+        font-size: 1.8rem;
+    }
+    
+    .item-name {
+        font-size: 1.2rem;
+    }
+    
+    .item-description {
+        max-width: 100%;
+    }
+    
+    .subsection-item {
+        flex-direction: column;
+    }
+    
+    .item-price-small {
+        margin-left: 0;
+        margin-top: 5px;
+    }
+    
+    .special-section {
+        padding: 20px;
+    }
+}
